@@ -21,6 +21,9 @@ const RepositoriesList: React.FC= () => {
             <input type="text" placeholder="Enter the term" onChange={(e)=> setTerm(e.target.value)}/>
             <button>Find Term</button>
         </form>
+        {error && <h3>{error}</h3>}
+        {loading && <h3>Loading...</h3>}
+        {!error && !loading && data.map(el=> <div key={el}>{el}</div>)}
     </div>
   )
 }
