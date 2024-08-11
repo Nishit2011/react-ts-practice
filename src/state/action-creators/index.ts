@@ -5,7 +5,7 @@ import {Action} from "../actions"
 import {Dispatch} from 'redux'
 
 
-const searchRepositories = (searchTerm: string) => {
+export const searchRepositories = (searchTerm: string) => {
     return async (dispatch:Dispatch<Action>) => {
         dispatch({
             type: ActionType.SEARCH_REPOSITORIES
@@ -19,7 +19,9 @@ const searchRepositories = (searchTerm: string) => {
             }
             
             )
-            const name = data.object.name.map((result:any)=>{
+          //  console.log(data)
+            const name = data.objects.map((result:any)=>{
+               // console.log(result.package.name)
                 return result.package.name
             })
 
